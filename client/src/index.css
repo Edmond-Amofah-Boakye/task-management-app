@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+
+input::placeholder{
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style-type: none;
+}

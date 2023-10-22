@@ -1,0 +1,110 @@
+.wrapper {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1e9ad8;
+}
+
+.corner {
+    width: 30vw;
+    height: 40vh;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.topleft {
+    top: -100px;
+    left: -200px;
+    background-color: #FF5733; 
+    rotate: 20deg;
+}
+
+.topright {
+    top: -100px;
+    right: -200px;
+    background-color: #33FF57; 
+    rotate: -20deg;
+}
+
+.bottomleft {
+    bottom: -100px;
+    left: -50px;
+    background-color: hsl(251, 100%, 60%);
+    rotate: -20deg;
+    width: 300px;
+    height: 300px;
+}
+
+.bottomright {
+    bottom: 50px;
+    right: 50px;
+    background-color: #c4bb1c; 
+    width: 80px;
+    height: 80px;
+}
+
+
+.content{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: absolute;
+    width: 50rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.image img{
+    width: 350px;
+}
+
+.message h1{
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.message button{
+    width: 100px;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.message button:hover{
+    background-color: rgb(45, 45, 116);
+    transition: all 3s ease;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -ms-transition: all 3s ease;
+    -o-transition: all 3s ease;
+}
+
+.message p{
+    margin-bottom: 1.1rem;
+}
