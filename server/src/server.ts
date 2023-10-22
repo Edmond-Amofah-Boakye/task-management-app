@@ -41,10 +41,6 @@ if(process.env.NODE_ENV == "development"){
 
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction)=>{
-    if(error.name === "ValidatorError"){
-        return res.status(500).send("Internal Server Error")
-    }
-
     return res.status(500).send(error)
 
 })
