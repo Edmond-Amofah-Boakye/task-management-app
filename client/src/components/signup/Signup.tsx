@@ -2,8 +2,30 @@ import styles from "../../styles/signup/Signup.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Signup() {
+  //handle goolge
+
+  const handleGoogle = () =>{
+    window.location.href = 'http://localhost:5000/auth/google'
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,24 +51,23 @@ function Signup() {
             <button>Sign Up</button>
           </div>
           <p className={styles.existAccount}>
-            Already have an account? <a href="login">Log In</a>
+            Already have an account? <Link to="/signin">Log In</Link>
           </p>
           <p className={styles.alternative}>or</p>
+        </form>
           <div className={styles.socials}>
             <div className={styles.google}>
-              <button>
+              <button onClick={handleGoogle}>
                 <FcGoogle className={styles.iconGoogle} /> Sign Up with Google
               </button>
             </div>
             <div className={styles.twitter}>
               <button>
-                {" "}
                 <FaTwitter className={styles.iconTwitter} />
                 Sign Up with Twitter
               </button>
             </div>
           </div>
-        </form>
       </div>
     </motion.div>
   );

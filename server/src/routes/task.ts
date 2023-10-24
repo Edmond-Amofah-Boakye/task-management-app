@@ -1,5 +1,5 @@
 import * as Task from "../controllers/task";
-import { Router } from "express";
+import { Router, response } from "express";
 
 const router = Router();
 
@@ -12,7 +12,6 @@ router.route("/:id")
   .get(Task.getTask)
   .patch(Task.updateTask)
   .delete(Task.deleteTask);
-
 
   
 export default router;
