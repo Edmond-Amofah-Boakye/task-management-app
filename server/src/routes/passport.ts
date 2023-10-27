@@ -10,7 +10,7 @@ router.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: 'http://localhost:5173/signin' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect("http://localhost:5173");
+    res.redirect("http://localhost:5173/categories");
   });
 
 router.get('/logout', (req: Request, res: Response, next: NextFunction)=>{

@@ -3,35 +3,41 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const Categories = () => {
+const EditCategory = () => {
   //zod schema
   const categorySchema = z.object({
-    category: z.string().min(1, { message: "**Category is required**" }),
+    category: z.string().min(1, { message: "category is rwquired" }),
   });
 
+  //form
+
+  //infer schema
   type ICategorySchema = z.infer<typeof categorySchema>;
 
   const {
     handleSubmit,
-    register,
     reset,
+    register,
     formState: { errors, isSubmitting },
-  } = useForm<ICategorySchema>({ resolver: zodResolver(categorySchema) });
+  } = useForm<ICategorySchema>({
+    resolver: zodResolver(categorySchema),
+  });
 
-  //submitting form
-  const onSubmit = (data: ICategorySchema) => {
+
+  const onSubmit = (data: ICategorySchema) =>{
     console.log(data);
-    reset();
-  };
+    reset()
+    
+  }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${styles.edit_wrapper}`}>
       <div className={`${styles.corner} ${styles.topright}`}></div>
       <div className={`${styles.corner} ${styles.bottomleft}`}></div>
       <div className={styles.content}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles["add-label"]}>
-            <label htmlFor="add">Add Category</label>
+            <label htmlFor="add">Edit Category</label>
             <div className={styles["add-cat-input"]}>
               <input
                 type="text"
@@ -51,13 +57,12 @@ const Categories = () => {
                 </p>
               )}
             </div>
-
             <div className={styles["add-buttons"]}>
               <div className={styles["cancel"]}>
                 <button type="reset">CANCEL</button>
               </div>
               <div className={styles["add"]}>
-                <button disabled={isSubmitting}>SUBMIT</button>
+                <button>SUBMIT</button>
               </div>
             </div>
           </div>
@@ -67,4 +72,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default EditCategory;
