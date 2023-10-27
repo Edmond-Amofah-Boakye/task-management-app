@@ -1,0 +1,103 @@
+.wrapper{
+    background-color: rgb(31, 30, 30);
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    position: relative
+}
+
+.add_btn{
+    position: relative;
+    margin-top: 1.3rem;
+}
+
+.add_Icon{
+    color: rgb(238, 231, 231);
+    position: absolute;
+    top: 1.7rem;
+    left: 1.6rem;
+    font-size: 1rem;
+}
+
+.add_btn button{
+    width: 85%;
+    padding: 0.7rem 0.6rem;
+    background-color: rgb(1, 115, 115);
+    color: rgb(238, 231, 231);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+
+.list_logout{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .list{
+    flex: 1;
+} */
+
+.logout{
+    position: absolute;
+    bottom: 50px;
+}
+
+.logout button{
+    width: 100%;
+    padding: 0.7rem 4.5rem;
+    background-color: rgb(231, 13, 74);
+    color: rgb(238, 231, 231);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.logout_Icon{
+    color: rgb(238, 231, 231);
+    position: absolute;
+    top: 1.7rem;
+    left: 1.6rem;
+    font-size: 1rem;
+}
+
+.list_logout ul li{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.active{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(1, 115, 115);
+    padding: 0.7rem 0.6rem;
+    width: 85%;
+    transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -ms-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+}
+
+.actions{
+    margin-right: 1.2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.trash{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
