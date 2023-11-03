@@ -1,18 +1,26 @@
 import { useState } from "react";
 import { FaArrowLeft, FaEdit, FaTrash } from "react-icons/fa";
-import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import styles from "../../styles/dashboard/Sidebar.module.css";
+import { useGetCategoriesQuery, useGetCategoryQuery, useDeleteCategoryMutation } from "../../features/api/CategoryAPI";
+import Spinner from "../spinner/Spinner";
 
 const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState<number>(-1);
 
-  const listItems: string[] = [
-    "School Task",
-    "Work Task",
-    "Personal Task",
-    "Home Task",
-  ];
+  // const [ getCategory ] = useGetCategoryQuery(null)
+
+  const [ deleteCategory] = useDeleteCategoryMutation()
+  const [activeItem, setActiveItem] = useState<number>(-1);
+  const { data: category, isLoading, isError, isFetching} = useGetCategoriesQuery(null)
+
+ 
+  if(isLoading || isFetching){
+    return <Spinner />
+  }
+  
+  if(isError){
+    return <p>Something went wrong</p>
+  }
 
   const handleItemClick = (index: number) => {
     setActiveItem(index);
@@ -32,16 +40,16 @@ const Sidebar = () => {
       </Link>
       <div className={styles.list_logout}>
         <ul className={styles.list}>
-          {listItems.map((item, index) => (
+          {category.data.map((item, index: number) => (
             <li
-              key={index}
+              key={item._id}
               className={index === activeItem ? styles.active : ""}
               onClick={() => handleItemClick(index)}
             >
-              {item}
+              <div>{item.name}</div>
               {index === activeItem && <div>
                 <FaEdit className={styles.actions}/>
-                <FaTrash className={styles.trash}/>
+                <FaTrash className={styles.trash} onClick={()=>deleteCategory(item._id)}/>
               </div>}
             </li>
           ))}

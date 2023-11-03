@@ -40,7 +40,7 @@ export const getCategory = async (req:Request, res: Response, next: NextFunction
 
 export const getAllCategories = async(req:Request, res: Response, next: NextFunction) =>{
     try {
-        const category = await categorySchema.find({}).exec()
+        const category = await categorySchema.find({}).select("-tasks")
         if(category.length === 0) return res.status(404).json({message: "no categoriesfound"})
 
         res.status(200).json({message: "success", data: category})

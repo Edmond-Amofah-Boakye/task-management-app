@@ -7,6 +7,8 @@ import AddTask from "./components/task/AddTask";
 import Dashboard from "./components/dashboard/Dashboard";
 import EditTask from "./components/edit_screens/EditTask";
 import EditCategory from "./components/edit_screens/EditCategory";
+import General from "./components/general/General";
+
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/general",
+    element: <General />
   },
 ]);
 const Router = () => {

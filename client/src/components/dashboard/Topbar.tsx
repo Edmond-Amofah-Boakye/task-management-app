@@ -2,16 +2,16 @@
 import { AiOutlineMenu } from 'react-icons/ai';
 import styles from "../../styles/dashboard/Topbar.module.css";
 import profile from '../../assets/default.avif'
+import { changeMenuState } from '../../features/general/Togglemenu';
+import { useDispatch } from 'react-redux'
 
-interface HandleMenuProp {
-  handleMenu: () => void
-}
+const Topbar = () => {
+  const dispatch = useDispatch()
 
-const Topbar = ({handleMenu}: HandleMenuProp) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <AiOutlineMenu className={styles.menu_icon} onClick ={handleMenu}/>
+        <AiOutlineMenu className={styles.menu_icon} onClick ={()=>dispatch(changeMenuState())}/>
       </div>
       <div className={styles.profile}>
         <img src={profile} alt="profile picture" />
