@@ -21,8 +21,8 @@ function Signin() {
       .trim()
       .min(6)
       .max(15)
-      .regex(/[A-Z]/)
-      .regex(/[!@#$%^&*,./]/),
+      .regex(/[A-Z]/, {message: "Password must constain at least one capital letter"})
+      .regex(/[!@#$%^&*,./]/, {message: "Password must constain at least one special character"}),
   });
 
   type ISignupSchema = z.infer<typeof signinSchema>;
